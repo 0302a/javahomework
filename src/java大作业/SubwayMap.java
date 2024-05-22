@@ -1,16 +1,20 @@
 package java大作业;
+import java.io.PrintStream;
 import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Map;
 
 public class SubwayMap {
 	private Map<String,Map<String,Double>> map;
 	public SubwayMap() {
 		this.map=new LinkedHashMap<>();
 	}
-	public void addLine(String LineName) {
-		map.put(LineName, new LinkedHashMap<>());
+	public void addLine(String linename) {
+		map.put(linename, new LinkedHashMap<>());
 	}
-	public void addStation(String LineName,String StationName,double distance) {
-		map.get(LineName).put(StationName,distance);
+	public void addStation(String linename,String stationname,double distance) {
+		map.get(linename).put(stationname,distance);
 	}
     public Set<String> getTransferStations() {
         Map<String, Set<String>> stationLines = new HashMap<>();
@@ -154,7 +158,7 @@ public class SubwayMap {
         if (payway.equals("武汉通"))
         {System.out.println("您选择武汉通支付");
             WuHanTong WuWanTong=new WuHanTong();
-            System.out.println("价格为"+WuHanTong.getprice(distances.get(linenumber)));
+			printStream.println("价格为"+WuHanTong.getprice(distances.get(linenumber)));
         }
         if (payway.equals("定期票"))
         {System.out.println("您选择定期票支付");
