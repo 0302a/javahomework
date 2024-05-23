@@ -1,5 +1,4 @@
 package java大作业;
-import java.io.PrintStream;
 import java.util.*;
 import java.util.List;
 import java.util.ArrayList;
@@ -44,15 +43,12 @@ public class SubwayMap {
     }
     public List<String> findStationsWithinDistance(String station, int distance) {
         List<String> results = new ArrayList<>();
-        // 遍历每一条地铁线路
         List<String> Line = new ArrayList<>();
         for (String i : map.keySet()) {
             Line.add(i);
         }
         int t = 0;
         for (Map<String, Double> M : map.values()) {
-            // 检查输入的站点是否在当前线路中
-
             String line = Line.get(t);
             ArrayList<String> stations = new ArrayList<String>();
             for (String i : M.keySet()) {
@@ -61,10 +57,7 @@ public class SubwayMap {
             if (stations.contains(station)) {
                 int index = stations.indexOf(station);
                 for (int i = Math.max(0, index - distance); i <= Math.min(stations.size() - 1, index + distance); i++) {
-                    // 计算相隔的站点数量
                     int distanceFromStation = Math.abs(i - index);
-                    // 构建结果字符串并添加到结果列表中
-
                     results.add("<<" + stations.get(i) + "," + line + "号线" + "," + distanceFromStation + ">>");
                 }
             }
@@ -90,7 +83,7 @@ public class SubwayMap {
                 if (!visited.contains(nextStation)) {
                     currentPath.add(nextStation);
                     findAllPathsDFS(nextStation, endStation, visited, currentPath, allPaths);
-                    currentPath.remove(currentPath.size() - 1); // 回溯
+                    currentPath.remove(currentPath.size() - 1); 
                 }
             }
         }
@@ -157,8 +150,8 @@ public class SubwayMap {
         }
         if (payway.equals("武汉通"))
         {System.out.println("您选择武汉通支付");
-            WuHanTong WuWanTong=new WuHanTong();
-			printStream.println("价格为"+WuHanTong.getprice(distances.get(linenumber)));
+            WuHanTong wuhantong=new WuHanTong();
+            System.out.println("价格为"+wuhantong.getprice(distances.get(linenumber)));
         }
         if (payway.equals("定期票"))
         {System.out.println("您选择定期票支付");
@@ -247,7 +240,5 @@ return nowline;
         }
 System.out.println("到"+laststation);
     }
-
-
 }
 

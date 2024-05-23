@@ -7,8 +7,8 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         SubwayMap subwayMap = new SubwayMap();
-OnewayTicket OnewayTicket=new OnewayTicket();
-        try (BufferedReader br = new BufferedReader(new FileReader("D:/subway.txt"))) {
+OnewayTicket onewayticket=new OnewayTicket();
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\ASUS\\Desktop\\subway.txt"))) {
             String line;
             String currentLine = null;
             while ((line = br.readLine()) != null) {

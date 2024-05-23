@@ -1,8 +1,8 @@
 package java大作业;
 
 public class WuHanTong extends Price{
-	@Override
-    public double getprice(Double distance) {
+	 @Override
+	public double getprice(Double distance) {
         Double price= (double) 0;
         if ((distance <= 4)&&(distance>0)) {
             price= 2.0;
