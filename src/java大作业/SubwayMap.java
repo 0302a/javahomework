@@ -100,10 +100,10 @@ public class SubwayMap {
             if (stations.contains(station)) {
                 int index = stations.indexOf(station);
                 if (index > 0) {
-                    connectedStations.add(stations.get(index - 1)); // 添加前一个站点
+                    connectedStations.add(stations.get(index - 1)); 
                 }
                 if (index < stations.size() - 1) {
-                    connectedStations.add(stations.get(index + 1)); // 添加后一个站点
+                    connectedStations.add(stations.get(index + 1)); 
                 }
             }
         }
